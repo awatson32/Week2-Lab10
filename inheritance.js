@@ -1,5 +1,7 @@
 var Vehicle = function(location) {
+    
     this.location = location;
+    
 }
 
 Vehicle.prototype.move = function() {
