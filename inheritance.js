@@ -4,8 +4,15 @@ var Vehicle = function(location) {
     
 }
 
+Vehicle.prototype.insert = function addVehicle() {
+    this.div = document.createElement('div');
+    this.div.className = 'vehicle';
+    document.body.appendChild(this.div);
+}
+
 Vehicle.prototype.move = function() {
-    this.location++;
+    var div = this.div;
+    div.aniamate('slow');
 }
 
 Vehicle.prototype.damage = function() {
@@ -17,12 +24,14 @@ Vehicle.prototype.remove = function() {
 }
 
 var Car = function() {
-    Vehicle.call();
+    Vehicle.call(this);
     // -should be a sub class of vehicle with all shared properties
 	// 	-considered totaled once has 2 damage points
 	// 	-only moves horizontally across the browser
 	// 	-has a reverse function to reverse the direction of the car
 }
+Car.prototype = Object.create(Vehicle.prototype);
+Car.prototype.constructor = Car;
 
 var Cop = function () {
     Vehicle.call();
