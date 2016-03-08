@@ -1,10 +1,8 @@
-var Vehicle = function(location) {
-    
-    this.location = location;
+var Vehicle = function() {
     
 }
 
-Vehicle.prototype.insert = function addVehicle() {
+Vehicle.prototype.insert = function() {
     this.div = document.createElement('div');
     this.div.className = 'vehicle';
     document.body.appendChild(this.div);
