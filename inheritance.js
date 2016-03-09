@@ -1,32 +1,32 @@
 $(document).ready(function() {
-      
-    function addCar() {
-        var car = new Vehicle();
-        this.div = document.createElement('div');
-        this.div.className = 'car';
-        document.body.appendChild(this.div); 
-    }     
+    
+    $('addCar').on('click', function() {
+        // var car = new Vehicle();
+        var div = document.createElement('div');
+        div = 'car';
+        $('body').append('<div class="car"></div>');
+    })   
         
-    function addCop() {
-        var car = new Vehicle();
-        this.div = document.createElement('div');
-        this.div.className = 'cop';
-        document.body.appendChild(this.div); 
-    }
+    // function addCop() {
+    //     var car = new Vehicle();
+    //     this.div = document.createElement('div');
+    //     this.div.className = 'cop';
+    //     document.body.appendChild(this.div); 
+    // }
 
-    function addMotorcycle() {
-        var car = new Vehicle();
-        this.div = document.createElement('div');
-        this.div.className = 'motorcycle';
-        document.body.appendChild(this.div);
-    }
+    // function addMotorcycle() {
+    //     var car = new Vehicle();
+    //     this.div = document.createElement('div');
+    //     this.div.className = 'motorcycle';
+    //     document.body.appendChild(this.div);
+    // }
 
-    function addTank() {
-        var car = new Vehicle();
-        this.div = document.createElement('div');
-        this.div.className = 'tank';
-        document.body.appendChild(this.div);
-    }
+    // function addTank() {
+    //     var car = new Vehicle();
+    //     this.div = document.createElement('div');
+    //     this.div.className = 'tank';
+    //     document.body.appendChild(this.div);
+    // }
     
         var Vehicle = function() {
         
