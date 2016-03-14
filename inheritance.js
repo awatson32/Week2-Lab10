@@ -1,34 +1,27 @@
 $(document).ready(function() {
+
+    var div = document.createElement('div');
     
-    $('addCar').on('click', function() {
-        // var car = new Vehicle();
-        var div = document.createElement('div');
-        div = 'car';
+    $('#addCar').on('click', function() {
         $('body').append('<div class="car"></div>');
-    })   
+        var car = new Car();
+        this.move;
         
-    // function addCop() {
-    //     var car = new Vehicle();
-    //     this.div = document.createElement('div');
-    //     this.div.className = 'cop';
-    //     document.body.appendChild(this.div); 
-    // }
-
-    // function addMotorcycle() {
-    //     var car = new Vehicle();
-    //     this.div = document.createElement('div');
-    //     this.div.className = 'motorcycle';
-    //     document.body.appendChild(this.div);
-    // }
-
-    // function addTank() {
-    //     var car = new Vehicle();
-    //     this.div = document.createElement('div');
-    //     this.div.className = 'tank';
-    //     document.body.appendChild(this.div);
-    // }
+    })
     
-        var Vehicle = function() {
+    $('#addCop').on('click', function() {
+        $('body').append('<div class="cop"></div>')
+    })
+    
+    $('#addMotorcycle').on('click', function() {
+        $('body').append('<div class="motorcycle"></div>');
+    })   
+    
+    $('#addTank').on('click', function() {
+        $('body').append('<div class="tank"></div>')
+    })
+    
+    var Vehicle = function() {
         
     }
 
@@ -56,11 +49,14 @@ $(document).ready(function() {
     //Constructors 
 
     function Car() {
-        Vehicle.call(this); 
+        Vehicle.call(this);
+        this.move = function() {
+            $(this).animate({left:'20px'}, 100);
         // -should be a sub class of vehicle with all shared properties
         // 	-considered totaled once has 2 damage points
         // 	-only moves horizontally across the browser
         // 	-has a reverse function to reverse the direction of the car
+    }
     }
     Car.prototype = Object.create(Vehicle.prototype);
     Car.prototype.constructor = Car;
